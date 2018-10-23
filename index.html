@@ -7,17 +7,17 @@
 
     <script>
 
+        /**
+         * Author: Joaquin Tolentino
+         * Date: October 23, 2018
+         **/
+
         let userScore = 0;
         let computerScore = 0;
-        let round = 1;
+        let numberOfRounds = 1;
         let message = "";
 
-        /**
-         * This function allows the computer to randomly choose between the 
-         * three options of rock, paper, or scissors.
-         * 
-         * */
-        function computerPlay() {
+        function getComputerChoice() {
             let randomNumber = Math.floor( Math.random() * ( 3 - 1 + 1 ) ) + 1;
             
             if ( randomNumber == 3 ) {
@@ -29,11 +29,8 @@
             }
         }
 
-        /**
-         * This function checks the player's choice and computer's choice if 
-         * either win or lose.
-         * **/
-        function singleRound( playerSelection, computerSelection ) {
+
+        function singleRoundPlay( playerSelection, computerSelection ) {
             if ( playerSelection.toLowerCase() === "rock" && computerSelection 
                     === "Paper" && computerSelection != playerSelection ) {
                 computerScore++;
@@ -68,8 +65,7 @@
             }
         }
          
-        /** Plays 5 rounds of the game and keeps track of score and round **/
-        function game() {
+        function fiveRoundsGame() {
 
             for ( let x = 1; x <= 5; x++  ) {
                 let playerSelection = prompt( "Rock, Paper, or Scissors? " );
@@ -80,12 +76,12 @@
                     console.log( "Not a valid input." );
                     break;
                 } else {
-                    singleRound( playerSelection, computerPlay() );
+                    singleRoundPlay( playerSelection, getComputerChoice() );
                     console.log( `Player Score: ${userScore}` );
                     console.log( `Computer Score: ${computerScore}` );
-                    console.log( `Round: ${round}` );
+                    console.log( `Round: ${numberOfRounds}` );
                     console.log( `${message}` );
-                    round++;
+                    numberOfRounds++;
                 }
             }
 
