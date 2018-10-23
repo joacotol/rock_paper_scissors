@@ -13,7 +13,8 @@
         let message = "";
 
         /**
-         * This function allows the computer to randomly choose between the three options of rock, paper, or scissors.
+         * This function allows the computer to randomly choose between the 
+         * three options of rock, paper, or scissors.
          * 
          * */
         function computerPlay() {
@@ -29,25 +30,37 @@
         }
 
         /**
-         * This function checks the player's choice and computer's choice if either win or lose.
+         * This function checks the player's choice and computer's choice if 
+         * either win or lose.
          * **/
         function singleRound( playerSelection, computerSelection ) {
-            if ( playerSelection.toLowerCase() === "rock" && computerSelection === "Paper" && computerSelection != playerSelection ) {
+            if ( playerSelection.toLowerCase() === "rock" && computerSelection 
+                    === "Paper" && computerSelection != playerSelection ) {
                 computerScore++;
                 return message = "You Lose! Paper beats Rock";
-            }  else if ( playerSelection.toLowerCase() === "paper" && computerSelection === "Rock" && computerSelection != playerSelection ) {
+            }  else if ( playerSelection.toLowerCase() === "paper" && 
+                    computerSelection === "Rock" && computerSelection != 
+                            playerSelection ) {
                 userScore++;
                 return message = "You Win! Paper beats Rock";
-            } else if ( playerSelection.toLowerCase() === "rock" && computerSelection === "Scissors" && computerSelection != playerSelection) {
+            } else if ( playerSelection.toLowerCase() === "rock" && 
+                    computerSelection === "Scissors" && computerSelection 
+                            != playerSelection) {
                 computerScore++;
                 return message = "You Lose! Scissors beat Rock";
-            } else if ( playerSelection.toLowerCase() === "scissors" && computerSelection === "Rock" && computerSelection != playerSelection) {
+            } else if ( playerSelection.toLowerCase() === "scissors" 
+                    && computerSelection === "Rock" && computerSelection 
+                            != playerSelection) {
                 userScore++;
                 return message = "You Win! Scissors beat Rock";
-            } else if ( playerSelection.toLowerCase() === "scissors" && computerSelection === "Paper" && computerSelection != playerSelection) {
+            } else if ( playerSelection.toLowerCase() === "scissors" 
+                    && computerSelection === "Paper" && computerSelection 
+                            != playerSelection) {
                 userScore++;
                 return message = "You Win! Scissors beat Paper"; 
-            } else if ( playerSelection.toLowerCase() === "paper" && computerSelection === "Scissors" && computerSelection != playerSelection) {
+            } else if ( playerSelection.toLowerCase() === "paper" 
+                    && computerSelection === "Scissors" && computerSelection 
+                            != playerSelection) {
                 computerScore++;
                 return message = "You Lose! Scissors beat Paper";
             } else {
@@ -61,7 +74,9 @@
             for ( let x = 1; x <= 5; x++  ) {
                 let playerSelection = prompt( "Rock, Paper, or Scissors? " );
                 
-                if ( playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() != "paper" && playerSelection.toLowerCase() != "scissors" ) {
+                if ( playerSelection.toLowerCase() != "rock" && 
+                        playerSelection.toLowerCase() != "paper" && 
+                                playerSelection.toLowerCase() != "scissors" ) {
                     console.log( "Not a valid input." );
                     break;
                 } else {
@@ -81,9 +96,6 @@
             } else {
                 console.log( "You lose the game!" );
             }
-
-            
-
         }
 
     </script>
