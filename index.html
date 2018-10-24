@@ -16,48 +16,44 @@
         let computerScore = 0;
         let numberOfRounds = 1;
         let message = "";
+        let randomArray = [ "Rock", "Paper", "Scissors" ];
 
         function getComputerChoice() {
-            let randomNumber = Math.floor( Math.random() * ( 3 - 1 + 1 ) ) + 1;
+
+            let randomNumber = Math.floor( Math.random() * ( randomArray.length - 1 + 1 ) );
             
-            if ( randomNumber == 3 ) {
-                return "Rock";
-            } else if( randomNumber == 2 ) {
-                return "Paper";
-            } else {
-                return "Scissors";
-            }
+            return randomArray[ randomNumber ];
         }
 
 
         function singleRoundPlay( playerSelection, computerSelection ) {
             if ( playerSelection.toLowerCase() === "rock" && computerSelection 
-                    === "Paper" && computerSelection != playerSelection ) {
+                    === randomArray[1] && computerSelection !== playerSelection ) {
                 computerScore++;
                 return message = "You Lose! Paper beats Rock";
             }  else if ( playerSelection.toLowerCase() === "paper" && 
-                    computerSelection === "Rock" && computerSelection != 
-                            playerSelection ) {
+                    computerSelection === randomArray[0] && computerSelection 
+                            !== playerSelection ) {
                 userScore++;
                 return message = "You Win! Paper beats Rock";
             } else if ( playerSelection.toLowerCase() === "rock" && 
-                    computerSelection === "Scissors" && computerSelection 
-                            != playerSelection) {
+                    computerSelection === randomArray[2] && computerSelection 
+                            !== playerSelection) {
                 computerScore++;
                 return message = "You Lose! Scissors beat Rock";
             } else if ( playerSelection.toLowerCase() === "scissors" 
-                    && computerSelection === "Rock" && computerSelection 
-                            != playerSelection) {
+                    && computerSelection === randomArray[0] && computerSelection 
+                            !== playerSelection) {
                 userScore++;
                 return message = "You Win! Scissors beat Rock";
             } else if ( playerSelection.toLowerCase() === "scissors" 
-                    && computerSelection === "Paper" && computerSelection 
-                            != playerSelection) {
+                    && computerSelection === randomArray[1] && computerSelection 
+                            !== playerSelection) {
                 userScore++;
                 return message = "You Win! Scissors beat Paper"; 
             } else if ( playerSelection.toLowerCase() === "paper" 
-                    && computerSelection === "Scissors" && computerSelection 
-                            != playerSelection) {
+                    && computerSelection === randomArray[2] && computerSelection 
+                            !== playerSelection) {
                 computerScore++;
                 return message = "You Lose! Scissors beat Paper";
             } else {
